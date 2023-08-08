@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1,
+    "sku": "SK-4C484C8",
+    "availableCount": 10
+  },
+  {
+    "id": 2,
+    "sku": "SK-E5F7056",
+    "availableCount": 14
+  },
+  {
+    "id": 3,
+    "sku": "SK-CBB1F6C",
+    "availableCount": 1
+  },
+  {
+    "id": 4,
+    "sku": "SK-71FF221",
+    "availableCount": 3
+  },
+  {
+    "id": 5,
+    "sku": "SK-AC2FC5C",
+    "availableCount": 8
+  },
+  {
+    "id": 6,
+    "sku": "SK-D466861",
+    "availableCount": 6
+  },
+  {
+    "id": 7,
+    "sku": "SK-BA6FE00",
+    "availableCount": 17
+  },
+  {
+    "id": 8,
+    "sku": "SK-EDB221B",
+    "availableCount": 2
+  },
+  {
+    "id": 9,
+    "sku": "SK-9BC510E",
+    "availableCount": 99
+  }
+]
