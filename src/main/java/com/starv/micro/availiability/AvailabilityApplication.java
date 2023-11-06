@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class AvailiabilityApplication {
+public class AvailabilityApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(AvailiabilityApplication.class, args);
+		SpringApplication.run(AvailabilityApplication.class, args);
 	}
 
 }
