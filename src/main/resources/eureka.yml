@@ -1,0 +1,6 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://${eureka.client.eureka-server-u-r-l-context}:${eureka.client.eureka-server-port}/eureka/
+    eureka-server-port: 8080
+    eureka-server-u-r-l-context: localhost
