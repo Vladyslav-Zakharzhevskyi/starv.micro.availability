@@ -1,4 +1,4 @@
-package com.starv.micro.availiability.config;
+package com.starv.micro.availiability.config.init;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -25,16 +25,19 @@ public class StartupDataPopulate implements ApplicationListener<ApplicationReady
     private ObjectMapper mapper;
 
     @Autowired
-    private MongoTemplate mongoTemplate;
+    private MongoTemplate template;
 
 
     @Override
     public void onApplicationEvent(ApplicationReadyEvent event) {
         try {
-            List<ProductAvailability> src = mapper
-                    .readValue(resource.getFile(), new TypeReference<>() {});
-            //save all products
-            src.forEach(pa -> mongoTemplate.insert(pa));
+            //save products
+            List<ProductAvailability> src = mapper.readValue(resource.getFile(), new TypeReference<>() {});
+            List<ProductAvailability> pas = template.findAll(ProductAvailability.class);
+            src.stream()
+                    .filter(pa -> !isProductExist(pa, pas))
+                    .forEach(pa -> template.insert(pa));
+            System.out.println("Product were checked and added successfully;");
         } catch (IOException e) {
             System.out.println("Can't parse initial data to insert to Mongo db.");
             throw new RuntimeException("Error handling initial availability data.");
@@ -46,4 +49,11 @@ public class StartupDataPopulate implements ApplicationListener<ApplicationReady
             }
         }
     }
+
+    private boolean isProductExist(ProductAvailability pa, List<ProductAvailability> pas) {
+        return pas.stream()
+                .map(ProductAvailability::getSku)
+                .anyMatch(sku -> sku.equals(pa.getSku()));
+    }
+
 }

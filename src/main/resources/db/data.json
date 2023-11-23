@@ -43,5 +43,15 @@
     "id": 9,
     "sku": "SK-9BC510E",
     "availableCount": 99
+  },
+  {
+    "id": 10,
+    "sku": "BK14300SV",
+    "availableCount": 10
+  },
+  {
+    "id": 11,
+    "sku": "BK14301SV",
+    "availableCount": 30
   }
 ]
