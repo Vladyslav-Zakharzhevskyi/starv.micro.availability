@@ -6,13 +6,6 @@ spring:
   data:
     mongodb:
       uri: mongodb://root:root@localhost:27017/availability
-  jpa:
-    hibernate:
-      ddl-auto: validate
-  sql:
-    init:
-      data-locations: classpath:db/data.json
-      mode: always
   config:
     import: classpath:eureka.yml
 

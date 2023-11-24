@@ -1,7 +1,8 @@
-package com.starv.micro.availiability.config.init;
+package com.starv.micro.availiability.init;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.mongodb.lang.NonNullApi;
 import com.starv.micro.availiability.model.ProductAvailability;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
